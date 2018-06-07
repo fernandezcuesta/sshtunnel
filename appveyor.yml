@@ -15,8 +15,10 @@ environment:
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
+image:
+  - Visual Studio 2017
+
 install:
-  - call "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
   - set "PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Tools\\Scripts;%PATH%"
   - "python -m pip install --upgrade pip"
   - "pip install pymyinstall"
