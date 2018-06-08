@@ -15,9 +15,11 @@ environment:
 
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
+  - "ECHO %PATH%"
 
 install:
   - set "PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Tools\\Scripts;%PATH%"
+  - "dir C:\ProgramData\chocolatey\bin"
   - "python -m pip install --upgrade pip"
   - "pip install pymyinstall"
   - "pip install cryptography"
@@ -26,7 +28,7 @@ install:
   - "pip install -U ipdb"
   - "pip install mock pytest pytest-cov pytest-xdist"
 
-build: off
+build: on
 
 test_script:
   - "python setup.py install"
