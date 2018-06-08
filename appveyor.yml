@@ -1,4 +1,3 @@
-os: Visual Studio 2017
 platform: x64
 
 environment:
@@ -12,14 +11,13 @@ environment:
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "64"
+      COMPILER: msys2
 
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-  - "choco install make"
   - set "PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Tools\\Scripts;%PATH%"
-  - "ECHO %PATH%"
   - "python -m pip install --upgrade pip"
   - "pip install pymyinstall"
   - "pip install cryptography"
