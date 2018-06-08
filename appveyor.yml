@@ -11,17 +11,13 @@ environment:
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "64"
-      COMPILER: msys2
-      MSYS2_DIR: msys64
-      MSYSTEM: MINGW64
 
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
-  - "ECHO %PATH%"
 
 install:
   - set "PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Tools\\Scripts;%PATH%"
-  - set "PATH=C:\%MSYS2_DIR%\%MSYSTEM%\bin;C:\%MSYS2_DIR%\usr\bin;;%PATH%"
+  - set "PATH=C:\MinGW\msys\1.0\bin;%PATH%"
   - "python -m pip install --upgrade pip"
   - "pip install pymyinstall"
   - "pip install cryptography"
