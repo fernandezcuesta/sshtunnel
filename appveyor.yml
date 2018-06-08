@@ -33,3 +33,7 @@ test_script:
   - "python setup.py install"
   - "py.test --showlocals --durations=10 -n4 tests"
 
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
