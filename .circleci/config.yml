@@ -86,7 +86,7 @@ workflows:
   version: 2
   tests:
     jobs:
-      - build  # python3.7
+      - build  # python3.8
       - python_2.7
       - python_3.4
       - python_3.5
